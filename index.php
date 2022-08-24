@@ -1,20 +1,5 @@
 <?php
 include("config.php");
-
-if(isset($_POST['submit'])){
-  $name=$_POST['name'];
-  $purpose=$_POST['purpose'];
-  $email=$_POST['email'];
-  $phone_number=$_POST['number'];
-  $amount=$_POST['amount'];
-
-  $sql=mysqli_query($conn,"INSERT INTO `payment_details`(`name`, `purpose`, `email`, `phone_number`, `amount`) VALUES ('$name','$purpose','$email','$phone_number','$amount')");
-
-  if($sql==1){
-    echo '<script>alert("Successfully submitted");</script>';
-}
-}
-
 ?>
 
 <!DOCTYPE html>
