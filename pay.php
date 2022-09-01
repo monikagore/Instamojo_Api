@@ -9,7 +9,6 @@ $purpose=$_POST['purpose'];
 $email=$_POST['email'];
 $phone_number=$_POST['number'];
 $amount=$_POST['amount'];
-$status=$_POST['status'];
 if(isset($_POST['purpose']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['amount']))
 {
     $api = new Instamojo\Instamojo(API_KEY, AUTH_TOKEN,'https://test.instamojo.com/api/1.1/');
