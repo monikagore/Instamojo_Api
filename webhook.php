@@ -20,7 +20,7 @@ else{
 // Pass the 'salt' without <>
 $mac_calculated = hash_hmac("sha1", implode("|", $data), "<19268b56abc64888ac60bd480f87576d>");
 if($mac_provided == $mac_calculated){
-    // if($data['status'] == "Credit"){
+    if($data['status'] == "Credit"){
        include("config.php");
 
             $name=$_POST['buyer_name'];
@@ -34,13 +34,14 @@ if($mac_provided == $mac_calculated){
             if($sql==1){
               echo '<script>alert("Successfully submitted");</script>';
           }
-        //   }
+          }
+          else{
+            // Payment was unsuccessful, mark it as failed in your database.
+            // You can acess payment_request_id, purpose etc here.
+        }
           
     }
-    else{
-        // Payment was unsuccessful, mark it as failed in your database.
-        // You can acess payment_request_id, purpose etc here.
-    }
+   
 else{
     echo "MAC mismatch";
 }
