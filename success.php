@@ -24,7 +24,7 @@ try {
     $buyer_name = $response['payment']['buyer_name'];
     $purpose = $response['payment']['purpose'];
     $email = $response['payment']['email'];
-    $phone = $response['payment']['phone'];
+    $phone = $response['payment']['buyer_phone'];
     $amount = $response['payment']['amount'];   
     $transaction_status = $response['payment']['status'];
  
