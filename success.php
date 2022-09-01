@@ -23,7 +23,7 @@ try {
     $response = $api->paymentRequestPaymentStatus($_GET['payment_request_id'], $_GET['payment_id']);
     $buyer_name = $response['payment']['buyer_name'];
     $purpose = $response['payment']['purpose'];
-    $email = $response['payment']['email'];
+    $email = $response['payment']['buyer_email'];
     $phone = $response['payment']['buyer_phone'];
     $amount = $response['payment']['amount'];   
     $transaction_status = $response['payment']['status'];
@@ -39,7 +39,6 @@ try {
  
          echo '<strong>Success!</strong>Your Order has placed successfully';
          echo '<br>';
-         echo 'Payment ID:' .$payment_id.'<br>';
          echo 'Buyer Name:' .$buyer_name.'<br>';
          echo 'Amount:' .$amount.'<br>';
          echo 'Transaction Status:' .$transaction_status;
