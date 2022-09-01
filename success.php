@@ -15,7 +15,7 @@ include("config.php");
 
 
 <?php
-require 'instamojo-php-0.4/src/Instamojo.php';
+require('./instamojo.php');
 //create the API object
 $api = new Instamojo\Instamojo('test_e3574b79601e4738061919e742c', 'test_2fc07cf9f5dc135531d31997f39', 'https://test.instamojo.com/api/1.1/');
 //Get the status of the payment related to your payment request
