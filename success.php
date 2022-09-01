@@ -31,7 +31,7 @@ try {
     {
         //insert the data in the database
         $sql="INSERT INTO `payment_details`(`name`, `purpose`, `email`, `phone_number`, `amount`) VALUES ('$buyer_name','$payment_id','$transaction_status','$payment_mode','$amount')";
-            $stmt=$conn->prepare($sql);
+            $stmt=$con->prepare($sql);
             $stmt->execute();
  
       if($stmt->rowCount()>0){
