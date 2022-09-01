@@ -16,7 +16,7 @@ if(isset($_POST['purpose']) && isset($_POST['name']) && isset($_POST['email']) &
             "send_email" => true,
             "email" => $_POST['email'],
             "redirect_url" => "http://monika.tectignis.in/success.php",
-            "webhook" => "http://monika.tectignis.in/instamojo_api/webhook.php"
+            "webhook" => "http://monika.tectignis.in/webhook.php"
             ));
         header('Location:'. $response['longurl']);
     }
