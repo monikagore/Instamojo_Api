@@ -22,15 +22,16 @@ $api = new Instamojo\Instamojo('test_e3574b79601e4738061919e742c', 'test_2fc07cf
 try {
     $response = $api->paymentRequestPaymentStatus($_GET['payment_request_id'], $_GET['payment_id']);
     $buyer_name = $response['payment']['buyer_name'];
-    $amount = $response['payment']['amount'];
-    $payment_id = $response['payment']['payment_id'];
+    $purpose = $response['payment']['purpose'];
+    $email = $response['payment']['email'];
+    $phone = $response['payment']['phone'];
+    $amount = $response['payment']['amount'];   
     $transaction_status = $response['payment']['status'];
-    $payment_mode = $response['payment']['instrument_type'];
  
     if($response['payment']['status']=='Credit')
     {
         //insert the data in the database
-        $sql="INSERT INTO `payment_details`(`name`, `purpose`, `email`, `phone_number`, `amount`) VALUES ('$buyer_name','$payment_id','$transaction_status','$payment_mode','$amount')";
+        $sql="INSERT INTO `payment_details`(`name`, `purpose`, `email`, `phone_number`, `amount`,`status`) VALUES ('$buyer_name','$purpose','$email','$phone','$amount','$transaction_status')";
             $stmt=$con->prepare($sql);
             $stmt->execute();
  
