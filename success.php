@@ -15,6 +15,7 @@ include("config.php");
 
 
 <?php
+session_start();
 require('./instamojo.php');
 //create the API object
 $api = new Instamojo\Instamojo('test_e3574b79601e4738061919e742c', 'test_2fc07cf9f5dc135531d31997f39', 'https://test.instamojo.com/api/1.1/');
