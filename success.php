@@ -22,7 +22,7 @@ $api = new Instamojo\Instamojo('test_e3574b79601e4738061919e742c', 'test_2fc07cf
 try {
     $response = $api->paymentRequestPaymentStatus($_GET['payment_request_id'], $_GET['payment_id']);
     $buyer_name = $response['payment']['buyer_name'];
-    $purpose = $response['payment']['buyer_purpose'];
+    $purpose =$_SESSION["purpose"];
     $email = $response['payment']['buyer_email'];
     $phone = $response['payment']['buyer_phone'];
     $amount = $response['payment']['amount'];   

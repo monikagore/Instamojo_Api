@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('./instamojo.php');
 include('config.php');
 const API_KEY ="test_e3574b79601e4738061919e742c";
@@ -6,6 +7,7 @@ const AUTH_TOKEN = "test_2fc07cf9f5dc135531d31997f39";
 
 $name=$_POST['name'];
 $purpose=$_POST['purpose'];
+$_SESSION["purpose"]=$purpose;
 $email=$_POST['email'];
 $phone_number=$_POST['number'];
 $amount=$_POST['amount'];
